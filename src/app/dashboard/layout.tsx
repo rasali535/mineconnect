@@ -75,7 +75,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   // Only read cookie on mount to avoid hydration mismatch
   React.useEffect(() => {
     const cookies = document.cookie.split("; ");
-    const roleCookie = cookies.find((row) => row.startsWith("mineconnect_persona="));
+    const roleCookie = cookies.find((row) => row.startsWith("debswanaconnect_persona="));
     if (roleCookie) {
       setPersona(roleCookie.split("=")[1]);
     }
@@ -118,7 +118,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <span style={{ fontSize: "1.5rem", flexShrink: 0 }}>⛏️</span>
           {sidebarOpen && (
             <span style={{ fontWeight: 800, fontSize: "1.125rem", color: "var(--text-primary)", whiteSpace: "nowrap" }}>
-              Khoemacau<span className="gradient-text"> Connect</span>
+              Debswana<span className="gradient-text"> Connect</span>
             </span>
           )}
         </div>

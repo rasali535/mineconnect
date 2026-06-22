@@ -32,14 +32,14 @@ export default function SignupPage() {
           <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
             <span style={{ fontSize: "2rem" }}>⛏️</span>
             <span style={{ fontWeight: 800, fontSize: "1.5rem", color: "var(--text-primary)" }}>
-              Khoemacau<span className="gradient-text"> Connect</span>
+              Debswana<span className="gradient-text"> Connect</span>
             </span>
           </Link>
         </div>
 
         <div className="glass-strong" style={{ borderRadius: "var(--radius-xl)", padding: "2.5rem" }}>
           <h1 style={{ fontSize: "1.5rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.5rem" }}>
-            Create your Khoemacau Connect account
+            Create your Debswana Connect account
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", marginBottom: "2rem" }}>
             Free for 30 days. No credit card required.

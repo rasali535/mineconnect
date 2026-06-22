@@ -1,8 +1,8 @@
-# ⛏️ MineConnect
+# ⛏️ DebswanaConnect
 
 > The all-in-one platform for mining operations — supplier management, contractor compliance, recruitment, community investment, and AI-powered insights.
 
-![MineConnect Dashboard](./public/screenshot-placeholder.png)
+![DebswanaConnect Dashboard](./public/screenshot-placeholder.png)
 
 ---
 
@@ -17,8 +17,8 @@
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/rasali535/mineconnect.git
-cd mineconnect
+git clone https://github.com/rasali535/debswanaconnect.git
+cd debswanaconnect
 npm install
 ```
 

@@ -23,7 +23,7 @@ export default async function DashboardPage() {
   const complianceRate = contractorsCount ? Math.round((compliantContractors! / contractorsCount!) * 100) : 0;
 
   const cookieStore = await cookies();
-  const persona = cookieStore.get("mineconnect_persona")?.value || "admin";
+  const persona = cookieStore.get("debswanaconnect_persona")?.value || "admin";
 
   let kpis = [];
   let quickLinks = [];
@@ -78,7 +78,7 @@ export default async function DashboardPage() {
   }
 
   const recentActivity = [
-    { time: "Just now", action: "System Update", detail: "Khoemacau Connect MVP Initialized", type: "info" },
+    { time: "Just now", action: "System Update", detail: "Debswana Connect MVP Initialized", type: "info" },
   ];
 
   return (

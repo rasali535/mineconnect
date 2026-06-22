@@ -8,7 +8,7 @@ const { Text } = Typography;
 
 export default function AIClient() {
   const [messages, setMessages] = useState([
-    { id: 1, role: "assistant", content: "Hello! I am the Khoemacau Connect Intelligence Assistant. I can help you search supplier documents, verify contractor compliance, or analyze ESG metrics. How can I assist you today?" }
+    { id: 1, role: "assistant", content: "Hello! I am the Debswana Connect Intelligence Assistant. I can help you search supplier documents, verify contractor compliance, or analyze ESG metrics. How can I assist you today?" }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -75,7 +75,7 @@ export default function AIClient() {
                       style={{ backgroundColor: item.role === 'assistant' ? 'var(--brand-500)' : '#87d068' }}
                     />
                   }
-                  title={<Text strong>{item.role === 'assistant' ? 'Khoemacau AI' : 'You'}</Text>}
+                  title={<Text strong>{item.role === 'assistant' ? 'Debswana AI' : 'You'}</Text>}
                   description={
                     <div style={{ 
                       background: item.role === 'assistant' ? 'var(--surface-1)' : 'var(--brand-50)', 

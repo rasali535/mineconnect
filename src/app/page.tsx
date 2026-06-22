@@ -45,7 +45,7 @@ const features = [
     icon: "🤖",
     title: "AI Assistant",
     description:
-      "Ask KhoemacauIQ anything — contract summaries, compliance alerts, supplier risk scores, and market intelligence at a prompt.",
+      "Ask DebswanaIQ anything — contract summaries, compliance alerts, supplier risk scores, and market intelligence at a prompt.",
   },
 ];
 
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: "Sarah van der Merwe",
     role: "COO, Platinum Ridge Mining",
-    text: "Khoemacau Connect reduced our supplier onboarding time from 6 weeks to 4 days. Our compliance team is finally ahead of the curve.",
+    text: "Debswana Connect reduced our supplier onboarding time from 6 weeks to 4 days. Our compliance team is finally ahead of the curve.",
     avatar: "SV",
   },
   {
@@ -99,7 +99,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-2">
             <span style={{ fontSize: "1.5rem" }}>⛏️</span>
             <span style={{ fontFamily: "var(--font-display, sans-serif)", fontWeight: 800, fontSize: "1.25rem", color: "var(--text-primary)" }}>
-              Khoemacau<span className="gradient-text"> Connect</span>
+              Debswana<span className="gradient-text"> Connect</span>
             </span>
           </div>
 
@@ -170,7 +170,7 @@ export default function LandingPage() {
           </div>
 
           <p className="animate-fade-in-up stagger-3" style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            Khoemacau Internal Systems · Authorized Personnel Only
+            Debswana Internal Systems · Authorized Personnel Only
           </p>
         </div>
       </section>
@@ -258,10 +258,10 @@ export default function LandingPage() {
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
           <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(245,158,11,0.1))", border: "1px solid rgba(14,165,233,0.2)", borderRadius: "1.5rem", padding: "3.5rem 2rem" }}>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--text-primary)", marginBottom: "1rem" }}>
-              Access the Khoemacau Connect Portal
+              Access the Debswana Connect Portal
             </h2>
             <p style={{ color: "var(--text-secondary)", fontSize: "1.0625rem", marginBottom: "2rem" }}>
-              Secure access for Khoemacau employees, contractors, and suppliers.
+              Secure access for Debswana employees, contractors, and suppliers.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/auth/login" className="btn btn-gold btn-xl">Secure Login</Link>
@@ -276,10 +276,10 @@ export default function LandingPage() {
         <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1.5rem", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ fontSize: "1.25rem" }}>⛏️</span>
-            <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Khoemacau Connect</span>
+            <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Debswana Connect</span>
           </div>
           <p style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            © 2026 Khoemacau Connect. Built for Africa's mining industry.
+            © 2026 Debswana Connect. Built for Africa's mining industry.
           </p>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             {["Privacy", "Terms", "Contact"].map((l) => (

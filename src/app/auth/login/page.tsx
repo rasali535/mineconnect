@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("admin@khoemacau.com");
-  const [password, setPassword] = useState("Khoemacau2026!");
+  const [password, setPassword] = useState("Debswana2026!");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
@@ -23,7 +23,7 @@ export default function LoginPage() {
       if (email.includes("applicant")) persona = "applicant";
       if (email.includes("community")) persona = "community";
       
-      document.cookie = `mineconnect_persona=${persona}; path=/`;
+      document.cookie = `debswanaconnect_persona=${persona}; path=/`;
       router.push("/dashboard");
     } else {
       setError("Please enter your email and password.");
@@ -46,7 +46,7 @@ export default function LoginPage() {
           <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
             <span style={{ fontSize: "2rem" }}>⛏️</span>
             <span style={{ fontWeight: 800, fontSize: "1.5rem", color: "var(--text-primary)" }}>
-              Khoemacau<span className="gradient-text"> Connect</span>
+              Debswana<span className="gradient-text"> Connect</span>
             </span>
           </Link>
         </div>
@@ -56,7 +56,7 @@ export default function LoginPage() {
             Welcome back
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", marginBottom: "2rem" }}>
-            Sign in to your Khoemacau Connect account
+            Sign in to your Debswana Connect account
           </p>
 
           {error && (
@@ -72,25 +72,25 @@ export default function LoginPage() {
                 type="button" 
                 className="badge badge-neutral" 
                 style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "admin@khoemacau.com" ? "var(--surface-3)" : "var(--surface-2)" }}
-                onClick={() => { setEmail("admin@khoemacau.com"); setPassword("Khoemacau2026!"); }}
+                onClick={() => { setEmail("admin@khoemacau.com"); setPassword("Debswana2026!"); }}
               >👑 Admin</button>
               <button 
                 type="button" 
                 className="badge badge-neutral" 
                 style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "supplier@shafteng.co.za" ? "var(--surface-3)" : "var(--surface-2)" }}
-                onClick={() => { setEmail("supplier@shafteng.co.za"); setPassword("Khoemacau2026!"); }}
+                onClick={() => { setEmail("supplier@shafteng.co.za"); setPassword("Debswana2026!"); }}
               >🏭 Supplier</button>
               <button 
                 type="button" 
                 className="badge badge-neutral" 
                 style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "applicant@email.com" ? "var(--surface-3)" : "var(--surface-2)" }}
-                onClick={() => { setEmail("applicant@email.com"); setPassword("Khoemacau2026!"); }}
+                onClick={() => { setEmail("applicant@email.com"); setPassword("Debswana2026!"); }}
               >👷 Applicant</button>
               <button 
                 type="button" 
                 className="badge badge-neutral" 
                 style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "community@rustenburg.gov.za" ? "var(--surface-3)" : "var(--surface-2)" }}
-                onClick={() => { setEmail("community@rustenburg.gov.za"); setPassword("Khoemacau2026!"); }}
+                onClick={() => { setEmail("community@rustenburg.gov.za"); setPassword("Debswana2026!"); }}
               >🤝 Community</button>
             </div>
           </div>

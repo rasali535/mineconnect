@@ -14,12 +14,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Khoemacau Connect – Mining Industry Platform",
+  title: "Debswana Connect – Mining Industry Platform",
   description:
-    "Khoemacau Connect is the all-in-one platform for mining operations – supplier management, contractor compliance, recruitment, community, and AI-powered insights.",
+    "Debswana Connect is the all-in-one platform for mining operations – supplier management, contractor compliance, recruitment, community, and AI-powered insights.",
   keywords: "mining, suppliers, contractors, compliance, recruitment, khoemacau",
   openGraph: {
-    title: "Khoemacau Connect – Mining Industry Platform",
+    title: "Debswana Connect – Mining Industry Platform",
     description: "Connecting the mining industry through technology.",
     type: "website",
   },

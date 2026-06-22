@@ -1,5 +1,5 @@
 -- ============================================================
--- Khoemacau Connect MVP Supabase Schema
+-- Debswana Connect MVP Supabase Schema
 -- Run in Supabase SQL Editor or via migration
 -- ============================================================
 
