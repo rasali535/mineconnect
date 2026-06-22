@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Table, Tag, Input, Button, Space, Modal, Form, Select, message, Statistic, Card, Row, Col, Typography } from "antd";
 import { SearchOutlined, PlusOutlined, TeamOutlined, BankOutlined, FundOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 const { Option } = Select;
 const { Text } = Typography;
@@ -60,7 +61,11 @@ export default function CommunityClient({ requests }: { requests: any[] }) {
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link" onClick={() => message.info('Opening request review portal...')}>Review</Button>
+      render: (_: any, record: any) => (
+        <Link href={`/dashboard/community/${record.id}`}>
+          <Button type="link">Review</Button>
+        </Link>
+      )
     }
   ];
 

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Table, Tag, Input, Button, Space, Tabs, Modal, Form, Select, message, Statistic, Card, Row, Col } from "antd";
 import { SearchOutlined, PlusOutlined, UserOutlined, TeamOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 const { Option } = Select;
 
@@ -48,7 +49,11 @@ export default function RecruitmentClient({ jobs, applications }: { jobs: any[],
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link" onClick={() => message.info('Redirecting to job detail view...')}>View</Button>
+      render: (_: any, record: any) => (
+        <Link href={`/dashboard/recruitment/jobs/${record.id}`}>
+          <Button type="link">View</Button>
+        </Link>
+      )
     }
   ];
 
@@ -88,7 +93,11 @@ export default function RecruitmentClient({ jobs, applications }: { jobs: any[],
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link" onClick={() => message.info('Opening applicant review portal...')}>Review</Button>
+      render: (_: any, record: any) => (
+        <Link href={`/dashboard/recruitment/applicants/${record.id}`}>
+          <Button type="link">Review</Button>
+        </Link>
+      )
     }
   ];
 
