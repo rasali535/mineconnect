@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Tabs, Descriptions, Card, Tag, Button, List, Space, Progress, Alert } from "antd";
+import { Tabs, Descriptions, Card, Tag, Button, List, Space, Progress, Alert, message } from "antd";
 import { SafetyCertificateOutlined, FilePdfOutlined, DownloadOutlined } from "@ant-design/icons";
 
 export default function ContractorDetailClient({ contractor }: { contractor: any }) {
