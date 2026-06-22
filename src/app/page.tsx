@@ -105,7 +105,7 @@ export default function LandingPage() {
 
           {/* Nav Links */}
           <nav className="hidden md:flex items-center gap-6">
-            {["Features", "Solutions", "Pricing", "About"].map((item) => (
+            {["Features", "Solutions", "About"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -120,8 +120,7 @@ export default function LandingPage() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
-            <Link href="/auth/login" className="btn btn-ghost btn-sm">Log in</Link>
-            <Link href="/auth/signup" className="btn btn-primary btn-sm">Get Started</Link>
+            <Link href="/auth/login" className="btn btn-primary btn-sm">Portal Login</Link>
           </div>
         </div>
       </header>
@@ -161,8 +160,8 @@ export default function LandingPage() {
           </p>
 
           <div className="animate-fade-in-up stagger-2" style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <Link href="/auth/signup" className="btn btn-primary btn-xl">
-              Start Free Trial
+            <Link href="/auth/login" className="btn btn-primary btn-xl">
+              Access Portal
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
             <Link href="/dashboard" className="btn btn-secondary btn-xl">
@@ -171,7 +170,7 @@ export default function LandingPage() {
           </div>
 
           <p className="animate-fade-in-up stagger-3" style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            No credit card required · Free for 30 days · Cancel anytime
+            Khoemacau Internal Systems · Authorized Personnel Only
           </p>
         </div>
       </section>
@@ -259,13 +258,13 @@ export default function LandingPage() {
         <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
           <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(245,158,11,0.1))", border: "1px solid rgba(14,165,233,0.2)", borderRadius: "1.5rem", padding: "3.5rem 2rem" }}>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--text-primary)", marginBottom: "1rem" }}>
-              Ready to transform your mining operations?
+              Access the Khoemacau Connect Portal
             </h2>
             <p style={{ color: "var(--text-secondary)", fontSize: "1.0625rem", marginBottom: "2rem" }}>
-              Join 500+ mining companies already using Khoemacau Connect.
+              Secure access for Khoemacau employees, contractors, and suppliers.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-              <Link href="/auth/signup" className="btn btn-gold btn-xl">Start Free Trial</Link>
+              <Link href="/auth/login" className="btn btn-gold btn-xl">Secure Login</Link>
               <Link href="/dashboard" className="btn btn-secondary btn-xl">View Demo</Link>
             </div>
           </div>

@@ -160,10 +160,7 @@ export default function LoginPage() {
           </button>
 
           <p style={{ textAlign: "center", marginTop: "1.75rem", fontSize: "0.875rem", color: "var(--text-secondary)" }}>
-            Don&apos;t have an account?{" "}
-            <Link href="/auth/signup" style={{ color: "var(--brand-400)", textDecoration: "none", fontWeight: 500 }}>
-              Sign up free
-            </Link>
+            Need access? Contact your system administrator.
           </p>
         </div>
       </div>
