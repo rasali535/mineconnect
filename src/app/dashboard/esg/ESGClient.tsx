@@ -64,17 +64,17 @@ export default function ESGClient({ esgData }: { esgData: any[] }) {
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Carbon Emissions (tons)" value={12500} prefix={<EnvironmentOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Water Usage (kL)" value={45000} prefix={<GlobalOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Energy Consumption (MWh)" value={8200} prefix={<ThunderboltOutlined />} />
           </Card>
         </Col>

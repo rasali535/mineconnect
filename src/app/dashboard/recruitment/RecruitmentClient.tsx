@@ -112,17 +112,17 @@ export default function RecruitmentClient({ jobs, applications }: { jobs: any[],
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Active Jobs" value={jobs.filter(j => j.status === 'Active').length} prefix={<UserOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Total Applications" value={applications.length} prefix={<TeamOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Local Candidates (Botswana)" value={applications.filter(a => a.is_local).length} valueStyle={{ color: '#3f8600' }} />
           </Card>
         </Col>

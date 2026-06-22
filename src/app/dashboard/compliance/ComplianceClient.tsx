@@ -97,22 +97,22 @@ export default function ComplianceClient({ contractors }: { contractors: any[] }
 
       <Row gutter={16}>
         <Col span={6}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Total Contractors" value={contractors.length} prefix={<SafetyCertificateOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Compliant" value={compliantCount} valueStyle={{ color: '#3f8600' }} prefix={<CheckCircleOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Expiring Soon / Warning" value={warningCount} valueStyle={{ color: '#faad14' }} prefix={<WarningOutlined />} />
           </Card>
         </Col>
         <Col span={6}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Non-Compliant" value={nonCompliantCount} valueStyle={{ color: '#cf1322' }} prefix={<FileExclamationOutlined />} />
           </Card>
         </Col>

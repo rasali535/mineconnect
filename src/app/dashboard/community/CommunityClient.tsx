@@ -84,17 +84,17 @@ export default function CommunityClient({ requests }: { requests: any[] }) {
 
       <Row gutter={16}>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Total Requests" value={requests.length} prefix={<TeamOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Total CSR Funding Requested" value={requests.reduce((sum, r) => sum + (r.requested_amount || 0), 0)} prefix={<BankOutlined />} />
           </Card>
         </Col>
         <Col span={8}>
-          <Card bordered={false}>
+          <Card variant="borderless">
             <Statistic title="Approved Requests" value={requests.filter(r => r.status === 'Approved').length} valueStyle={{ color: '#3f8600' }} prefix={<FundOutlined />} />
           </Card>
         </Col>
