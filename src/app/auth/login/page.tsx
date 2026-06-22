@@ -18,6 +18,12 @@ export default function LoginPage() {
     // Mock auth — replace with Supabase when credentials are configured
     await new Promise((r) => setTimeout(r, 900));
     if (email && password) {
+      let persona = "admin";
+      if (email.includes("supplier")) persona = "supplier";
+      if (email.includes("applicant")) persona = "applicant";
+      if (email.includes("community")) persona = "community";
+      
+      document.cookie = `mineconnect_persona=${persona}; path=/`;
       router.push("/dashboard");
     } else {
       setError("Please enter your email and password.");

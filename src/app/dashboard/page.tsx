@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
+import { cookies } from "next/headers";
 
 export default async function DashboardPage() {
   const supabase = await createClient();
@@ -21,12 +22,60 @@ export default async function DashboardPage() {
 
   const complianceRate = contractorsCount ? Math.round((compliantContractors! / contractorsCount!) * 100) : 0;
 
-  const kpis = [
-    { label: "Active Suppliers", value: suppliersCount || 0, delta: "vs last month", trend: "up", icon: "🏭", color: "var(--brand-400)" },
-    { label: "Compliance Rate", value: `${complianceRate}%`, delta: "vs last quarter", trend: complianceRate > 80 ? "up" : "down", icon: "✅", color: complianceRate > 80 ? "var(--success)" : "var(--warning)" },
-    { label: "Open Vacancies", value: jobsCount || 0, delta: "currently active", trend: "neutral", icon: "👷", color: "var(--gold-400)" },
-    { label: "Pending Community Requests", value: communityCount || 0, delta: "awaiting review", trend: "neutral", icon: "🤝", color: "#a78bfa" },
-  ];
+  const cookieStore = await cookies();
+  const persona = cookieStore.get("mineconnect_persona")?.value || "admin";
+
+  let kpis = [];
+  let quickLinks = [];
+  let dashboardTitle = "Executive Dashboard";
+
+  if (persona === "supplier") {
+    dashboardTitle = "Supplier Portal";
+    kpis = [
+      { label: "Active Contracts", value: 2, delta: "in progress", trend: "up", icon: "📄", color: "var(--brand-400)" },
+      { label: "Compliance Status", value: "Valid", delta: "expires 2026", trend: "up", icon: "✅", color: "var(--success)" },
+      { label: "Pending Invoices", value: "R 245K", delta: "awaiting payment", trend: "neutral", icon: "💰", color: "var(--gold-400)" },
+    ];
+    quickLinks = [
+      { href: "/dashboard/suppliers", icon: "🏭", label: "My Contracts" },
+      { href: "/dashboard/compliance", icon: "📋", label: "Compliance Certificates" },
+    ];
+  } else if (persona === "applicant") {
+    dashboardTitle = "Applicant Portal";
+    kpis = [
+      { label: "Active Applications", value: 1, delta: "Screening phase", trend: "up", icon: "📄", color: "var(--brand-400)" },
+      { label: "Profile Match", value: "81%", delta: "for Mine Surveyor", trend: "up", icon: "🎯", color: "var(--success)" },
+    ];
+    quickLinks = [
+      { href: "/dashboard/recruitment", icon: "👷", label: "My Applications" },
+    ];
+  } else if (persona === "community") {
+    dashboardTitle = "Community Partner Dashboard";
+    kpis = [
+      { label: "Active Projects", value: 3, delta: "funded", trend: "up", icon: "🏗️", color: "var(--brand-400)" },
+      { label: "Pending Requests", value: communityCount || 0, delta: "awaiting review", trend: "neutral", icon: "🤝", color: "#a78bfa" },
+      { label: "ESG Score", value: "A-", delta: "improving", trend: "up", icon: "🌱", color: "var(--success)" },
+    ];
+    quickLinks = [
+      { href: "/dashboard/community", icon: "🤝", label: "Community Impact Hub" },
+      { href: "/dashboard/esg", icon: "🌱", label: "Sustainability KPIs" },
+    ];
+  } else {
+    // Admin
+    kpis = [
+      { label: "Active Suppliers", value: suppliersCount || 0, delta: "vs last month", trend: "up", icon: "🏭", color: "var(--brand-400)" },
+      { label: "Compliance Rate", value: `${complianceRate}%`, delta: "vs last quarter", trend: complianceRate > 80 ? "up" : "down", icon: "✅", color: complianceRate > 80 ? "var(--success)" : "var(--warning)" },
+      { label: "Open Vacancies", value: jobsCount || 0, delta: "currently active", trend: "neutral", icon: "👷", color: "var(--gold-400)" },
+      { label: "Pending Community Requests", value: communityCount || 0, delta: "awaiting review", trend: "neutral", icon: "🤝", color: "#a78bfa" },
+    ];
+    quickLinks = [
+      { href: "/dashboard/suppliers", icon: "🏭", label: "Supplier Network" },
+      { href: "/dashboard/compliance", icon: "📋", label: "Compliance & Safety Hub" },
+      { href: "/dashboard/recruitment", icon: "👷", label: "Careers & Talent Portal" },
+      { href: "/dashboard/community", icon: "🤝", label: "Community Impact Hub" },
+      { href: "/dashboard/ai", icon: "🤖", label: "Intelligence Assistant" },
+    ];
+  }
 
   const recentActivity = [
     { time: "Just now", action: "System Update", detail: "Khoemacau Connect MVP Initialized", type: "info" },
@@ -37,7 +86,7 @@ export default async function DashboardPage() {
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "1rem" }}>
         <div>
-          <h1 style={{ fontSize: "1.625rem", fontWeight: 800, color: "var(--text-primary)" }}>Executive Dashboard</h1>
+          <h1 style={{ fontSize: "1.625rem", fontWeight: 800, color: "var(--text-primary)" }}>{dashboardTitle}</h1>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", marginTop: "0.25rem" }}>
             Good morning. Here's your operations overview.
           </p>
@@ -85,13 +134,7 @@ export default async function DashboardPage() {
         <div className="card" style={{ padding: "1.5rem" }}>
           <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--text-primary)", marginBottom: "1.25rem" }}>Quick Access</h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.625rem" }}>
-            {[
-              { href: "/dashboard/suppliers", icon: "🏭", label: "Supplier Network" },
-              { href: "/dashboard/compliance", icon: "📋", label: "Compliance & Safety Hub" },
-              { href: "/dashboard/recruitment", icon: "👷", label: "Careers & Talent Portal" },
-              { href: "/dashboard/community", icon: "🤝", label: "Community Impact Hub" },
-              { href: "/dashboard/ai", icon: "🤖", label: "Intelligence Assistant" },
-            ].map((q) => (
+            {quickLinks.map((q) => (
               <Link
                 key={q.href}
                 href={q.href}

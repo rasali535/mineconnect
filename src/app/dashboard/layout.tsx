@@ -1,44 +1,98 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const navSections = [
-  {
-    label: "Overview",
-    items: [
-      { href: "/dashboard", icon: "📊", label: "Dashboard" },
-    ],
-  },
-  {
-    label: "Operations",
-    items: [
-      { href: "/dashboard/suppliers", icon: "🏭", label: "Suppliers" },
-      { href: "/dashboard/compliance", icon: "📋", label: "Compliance" },
-      { href: "/dashboard/recruitment", icon: "👷", label: "Recruitment" },
-      { href: "/dashboard/community", icon: "🤝", label: "Community" },
-      { href: "/dashboard/esg", icon: "🌱", label: "ESG" },
-    ],
-  },
-  {
-    label: "Intelligence",
-    items: [
-      { href: "/dashboard/ai", icon: "🤖", label: "AI Assistant" },
-    ],
-  },
-  {
-    label: "Settings",
-    items: [
-      { href: "/dashboard/settings", icon: "⚙️", label: "Settings" },
-    ],
-  },
-];
+const getFilteredNav = (role: string) => {
+  const allNav = [
+    {
+      label: "Overview",
+      items: [
+        { href: "/dashboard", icon: "📊", label: "Dashboard" },
+      ],
+    },
+    {
+      label: "Operations",
+      items: [
+        { href: "/dashboard/suppliers", icon: "🏭", label: "Suppliers" },
+        { href: "/dashboard/compliance", icon: "📋", label: "Compliance" },
+        { href: "/dashboard/recruitment", icon: "👷", label: "Recruitment" },
+        { href: "/dashboard/community", icon: "🤝", label: "Community" },
+        { href: "/dashboard/esg", icon: "🌱", label: "ESG" },
+      ],
+    },
+    {
+      label: "Intelligence",
+      items: [
+        { href: "/dashboard/ai", icon: "🤖", label: "AI Assistant" },
+      ],
+    },
+    {
+      label: "Settings",
+      items: [
+        { href: "/dashboard/settings", icon: "⚙️", label: "Settings" },
+      ],
+    },
+  ];
+
+  if (role === "admin") return allNav;
+  if (role === "supplier") {
+    return [
+      { label: "Overview", items: [{ href: "/dashboard", icon: "📊", label: "Dashboard" }] },
+      { label: "Portal", items: [
+        { href: "/dashboard/suppliers", icon: "🏭", label: "My Contracts" },
+        { href: "/dashboard/compliance", icon: "📋", label: "My Compliance" },
+      ] },
+    ];
+  }
+  if (role === "applicant") {
+    return [
+      { label: "Overview", items: [{ href: "/dashboard", icon: "📊", label: "Dashboard" }] },
+      { label: "Career", items: [
+        { href: "/dashboard/recruitment", icon: "👷", label: "My Applications" },
+      ] },
+    ];
+  }
+  if (role === "community") {
+    return [
+      { label: "Overview", items: [{ href: "/dashboard", icon: "📊", label: "Dashboard" }] },
+      { label: "Impact", items: [
+        { href: "/dashboard/community", icon: "🤝", label: "Community Hub" },
+        { href: "/dashboard/esg", icon: "🌱", label: "Sustainability" },
+      ] },
+    ];
+  }
+  return allNav;
+};
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [persona, setPersona] = useState("admin");
+
+  // Only read cookie on mount to avoid hydration mismatch
+  React.useEffect(() => {
+    const cookies = document.cookie.split("; ");
+    const roleCookie = cookies.find((row) => row.startsWith("mineconnect_persona="));
+    if (roleCookie) {
+      setPersona(roleCookie.split("=")[1]);
+    }
+  }, []);
+
+  const navSections = getFilteredNav(persona);
+  
+  const getUserProfile = (role: string) => {
+    switch (role) {
+      case "supplier": return { name: "Shaft Engineering", title: "Supplier Portal", initials: "SE", bg: "var(--brand-700)" };
+      case "applicant": return { name: "Thabo Molefe", title: "Applicant", initials: "TM", bg: "var(--success)" };
+      case "community": return { name: "Bojanala Municipality", title: "Community Partner", initials: "BM", bg: "var(--warning)" };
+      default: return { name: "James Mokoena", title: "Admin", initials: "JM", bg: "linear-gradient(135deg, var(--brand-700), var(--brand-500))" };
+    }
+  };
+  
+  const userProfile = getUserProfile(persona);
 
   return (
     <div style={{ display: "flex", minHeight: "100vh", background: "var(--surface-0)" }}>
@@ -117,13 +171,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             style={{ display: "flex", alignItems: "center", gap: "0.75rem", padding: "0.625rem 0.5rem", borderRadius: "var(--radius-sm)", cursor: "pointer", position: "relative" }}
             onClick={() => setUserMenuOpen((p) => !p)}
           >
-            <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg, var(--brand-700), var(--brand-500))", display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8125rem", fontWeight: 700, color: "white", flexShrink: 0 }}>
-              JM
+            <div style={{ width: 36, height: 36, borderRadius: "50%", background: userProfile.bg, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.8125rem", fontWeight: 700, color: "white", flexShrink: 0 }}>
+              {userProfile.initials}
             </div>
             {sidebarOpen && (
               <div style={{ overflow: "hidden" }}>
-                <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--text-primary)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>James Mokoena</div>
-                <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>Admin</div>
+                <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--text-primary)", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{userProfile.name}</div>
+                <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>{userProfile.title}</div>
               </div>
             )}
 
