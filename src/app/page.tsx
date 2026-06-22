@@ -45,7 +45,7 @@ const features = [
     icon: "🤖",
     title: "AI Assistant",
     description:
-      "Ask MineIQ anything — contract summaries, compliance alerts, supplier risk scores, and market intelligence at a prompt.",
+      "Ask KhoemacauIQ anything — contract summaries, compliance alerts, supplier risk scores, and market intelligence at a prompt.",
   },
 ];
 
@@ -53,7 +53,7 @@ const testimonials = [
   {
     name: "Sarah van der Merwe",
     role: "COO, Platinum Ridge Mining",
-    text: "MineConnect reduced our supplier onboarding time from 6 weeks to 4 days. Our compliance team is finally ahead of the curve.",
+    text: "Khoemacau Connect reduced our supplier onboarding time from 6 weeks to 4 days. Our compliance team is finally ahead of the curve.",
     avatar: "SV",
   },
   {
@@ -99,7 +99,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-2">
             <span style={{ fontSize: "1.5rem" }}>⛏️</span>
             <span style={{ fontFamily: "var(--font-display, sans-serif)", fontWeight: 800, fontSize: "1.25rem", color: "var(--text-primary)" }}>
-              Mine<span className="gradient-text">Connect</span>
+              Khoemacau<span className="gradient-text"> Connect</span>
             </span>
           </div>
 
@@ -262,7 +262,7 @@ export default function LandingPage() {
               Ready to transform your mining operations?
             </h2>
             <p style={{ color: "var(--text-secondary)", fontSize: "1.0625rem", marginBottom: "2rem" }}>
-              Join 500+ mining companies already using MineConnect.
+              Join 500+ mining companies already using Khoemacau Connect.
             </p>
             <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
               <Link href="/auth/signup" className="btn btn-gold btn-xl">Start Free Trial</Link>
@@ -277,10 +277,10 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ fontSize: "1.25rem" }}>⛏️</span>
-            <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>MineConnect</span>
+            <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Khoemacau Connect</span>
           </div>
           <p style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            © 2026 MineConnect. Built for Africa's mining industry.
+            © 2026 Khoemacau Connect. Built for Africa's mining industry.
           </p>
           <div style={{ display: "flex", gap: "1.5rem" }}>
             {["Privacy", "Terms", "Contact"].map((l) => (

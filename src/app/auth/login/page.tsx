@@ -46,7 +46,7 @@ export default function LoginPage() {
           <Link href="/" style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
             <span style={{ fontSize: "2rem" }}>⛏️</span>
             <span style={{ fontWeight: 800, fontSize: "1.5rem", color: "var(--text-primary)" }}>
-              Mine<span className="gradient-text">Connect</span>
+              Khoemacau<span className="gradient-text"> Connect</span>
             </span>
           </Link>
         </div>
@@ -56,7 +56,7 @@ export default function LoginPage() {
             Welcome back
           </h1>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.875rem", marginBottom: "2rem" }}>
-            Sign in to your MineConnect account
+            Sign in to your Khoemacau Connect account
           </p>
 
           {error && (

@@ -118,7 +118,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           <span style={{ fontSize: "1.5rem", flexShrink: 0 }}>⛏️</span>
           {sidebarOpen && (
             <span style={{ fontWeight: 800, fontSize: "1.125rem", color: "var(--text-primary)", whiteSpace: "nowrap" }}>
-              Mine<span className="gradient-text">Connect</span>
+              Khoemacau<span className="gradient-text"> Connect</span>
             </span>
           )}
         </div>
