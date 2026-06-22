@@ -60,7 +60,7 @@ export default function CommunityClient({ requests }: { requests: any[] }) {
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link">Review</Button>
+      render: () => <Button type="link" onClick={() => message.info('Opening request review portal...')}>Review</Button>
     }
   ];
 

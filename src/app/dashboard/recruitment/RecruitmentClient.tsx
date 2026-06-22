@@ -48,7 +48,7 @@ export default function RecruitmentClient({ jobs, applications }: { jobs: any[],
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link">View</Button>
+      render: () => <Button type="link" onClick={() => message.info('Redirecting to job detail view...')}>View</Button>
     }
   ];
 
@@ -88,7 +88,7 @@ export default function RecruitmentClient({ jobs, applications }: { jobs: any[],
     {
       title: "Action",
       key: "action",
-      render: () => <Button type="link">Review</Button>
+      render: () => <Button type="link" onClick={() => message.info('Opening applicant review portal...')}>Review</Button>
     }
   ];
 

@@ -52,7 +52,7 @@ export default function SupplierDetailClient({ supplier }: { supplier: any }) {
           </Space>
         </div>
         <Space>
-          <Button icon={<EditOutlined />}>Edit</Button>
+          <Button icon={<EditOutlined />} onClick={() => message.info('Edit mode enabled.')}>Edit</Button>
           <Button danger onClick={() => setIsSuspendModalOpen(true)}>
             {supplier.status === "Suspended" ? "Reinstate" : "Suspend"}
           </Button>
@@ -76,7 +76,7 @@ export default function SupplierDetailClient({ supplier }: { supplier: any }) {
             children: (
               <div style={{ marginTop: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>
-                  <Button type="primary">Upload Document</Button>
+                  <Button type="primary" onClick={() => message.info('Opening upload dialog...')}>Upload Document</Button>
                 </div>
                 <List
                   itemLayout="horizontal"
@@ -86,7 +86,7 @@ export default function SupplierDetailClient({ supplier }: { supplier: any }) {
                   ]}
                   renderItem={(item) => (
                     <List.Item
-                      actions={[<Button key="download" type="link" icon={<DownloadOutlined />}>Download</Button>]}
+                      actions={[<Button key="download" type="link" icon={<DownloadOutlined />} onClick={() => message.success('File downloading...')}>Download</Button>]}
                     >
                       <List.Item.Meta
                         avatar={<FilePdfOutlined style={{ fontSize: 24, color: '#ff4d4f' }} />}

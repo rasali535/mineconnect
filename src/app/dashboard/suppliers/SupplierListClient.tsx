@@ -105,7 +105,7 @@ export default function SupplierListClient({ suppliers }: { suppliers: any[] }) 
           <p style={{ color: "var(--text-secondary)" }}>Manage onboarding and procurement directory.</p>
         </div>
         <Space>
-          <Button icon={<ExportOutlined />}>Export CSV</Button>
+          <Button icon={<ExportOutlined />} onClick={() => message.info("Exporting CSV... Please wait.")}>Export CSV</Button>
           <Button type="primary" icon={<PlusOutlined />} onClick={() => setIsModalOpen(true)}>
             Onboard Supplier
           </Button>

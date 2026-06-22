@@ -65,7 +65,7 @@ export default function ContractorDetailClient({ contractor }: { contractor: any
             children: (
               <div style={{ marginTop: 16 }}>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 16 }}>
-                  <Button type="primary">Upload Compliance Document</Button>
+                  <Button type="primary" onClick={() => message.info('Opening upload dialog...')}>Upload Compliance Document</Button>
                 </div>
                 <List
                   itemLayout="horizontal"
@@ -76,7 +76,7 @@ export default function ContractorDetailClient({ contractor }: { contractor: any
                   ]}
                   renderItem={(item) => (
                     <List.Item
-                      actions={[<Button key="download" type="link" icon={<DownloadOutlined />}>Download</Button>]}
+                      actions={[<Button key="download" type="link" icon={<DownloadOutlined />} onClick={() => message.success('File downloading...')}>Download</Button>]}
                     >
                       <List.Item.Meta
                         avatar={<SafetyCertificateOutlined style={{ fontSize: 24, color: '#1890ff' }} />}
