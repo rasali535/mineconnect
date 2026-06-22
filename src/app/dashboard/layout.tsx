@@ -18,6 +18,7 @@ const navSections = [
       { href: "/dashboard/compliance", icon: "📋", label: "Compliance" },
       { href: "/dashboard/recruitment", icon: "👷", label: "Recruitment" },
       { href: "/dashboard/community", icon: "🤝", label: "Community" },
+      { href: "/dashboard/esg", icon: "🌱", label: "ESG" },
     ],
   },
   {

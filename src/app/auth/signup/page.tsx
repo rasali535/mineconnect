@@ -57,7 +57,7 @@ export default function SignupPage() {
               </div>
             </div>
             <div>
-              <label className="label">Work email</label>
+              <label className="label" style={{ marginBottom: "0.375rem" }}>Work email</label>
               <input className="input" type="email" name="email" placeholder="jane@company.com" value={form.email} onChange={handleChange} required />
             </div>
             <div>
