@@ -94,7 +94,7 @@ export default function LandingPage() {
           scrolled ? "glass-strong shadow-lg" : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
+        <div className="flex items-center justify-between h-16" style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1.5rem" }}>
           {/* Logo */}
           <div className="flex items-center gap-2">
             <span style={{ fontSize: "1.5rem" }}>⛏️</span>
@@ -132,7 +132,7 @@ export default function LandingPage() {
         <div style={{ position: "absolute", top: "10%", left: "15%", width: 400, height: 400, background: "radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
         <div style={{ position: "absolute", top: "20%", right: "10%", width: 300, height: 300, background: "radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%)", borderRadius: "50%", pointerEvents: "none" }} />
 
-        <div className="max-w-5xl mx-auto px-6 relative">
+        <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1.5rem", position: "relative" }}>
           <div className="badge badge-info animate-fade-in" style={{ display: "inline-flex", marginBottom: "1.5rem" }}>
             🚀 Now with AI-powered compliance automation
           </div>
@@ -178,7 +178,7 @@ export default function LandingPage() {
 
       {/* ─── STATS ─── */}
       <section style={{ padding: "3rem 0", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", background: "rgba(15,22,41,0.4)" }}>
-        <div className="max-w-5xl mx-auto px-6">
+        <div style={{ maxWidth: 1024, margin: "0 auto", padding: "0 1.5rem" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "2rem", textAlign: "center" }}>
             {stats.map((s) => (
               <div key={s.value}>
@@ -194,7 +194,7 @@ export default function LandingPage() {
 
       {/* ─── FEATURES ─── */}
       <section id="features" style={{ padding: "6rem 0" }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1.5rem" }}>
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 800, color: "var(--text-primary)", marginBottom: "1rem" }}>
               Everything mining needs, nothing it doesn't
@@ -229,7 +229,7 @@ export default function LandingPage() {
 
       {/* ─── TESTIMONIALS ─── */}
       <section style={{ padding: "5rem 0", background: "rgba(15,22,41,0.5)", borderTop: "1px solid var(--border)" }}>
-        <div className="max-w-6xl mx-auto px-6">
+        <div style={{ maxWidth: 1152, margin: "0 auto", padding: "0 1.5rem" }}>
           <h2 style={{ textAlign: "center", fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 800, color: "var(--text-primary)", marginBottom: "3rem" }}>
             Trusted by leading mining operations
           </h2>
@@ -256,7 +256,7 @@ export default function LandingPage() {
 
       {/* ─── CTA BANNER ─── */}
       <section style={{ padding: "6rem 0" }}>
-        <div className="max-w-3xl mx-auto px-6 text-center">
+        <div style={{ maxWidth: 768, margin: "0 auto", padding: "0 1.5rem", textAlign: "center" }}>
           <div style={{ background: "linear-gradient(135deg, rgba(14,165,233,0.15), rgba(245,158,11,0.1))", border: "1px solid rgba(14,165,233,0.2)", borderRadius: "1.5rem", padding: "3.5rem 2rem" }}>
             <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--text-primary)", marginBottom: "1rem" }}>
               Ready to transform your mining operations?
@@ -274,7 +274,7 @@ export default function LandingPage() {
 
       {/* ─── FOOTER ─── */}
       <footer style={{ borderTop: "1px solid var(--border)", padding: "2rem 0", background: "var(--surface-1)" }}>
-        <div className="max-w-7xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
+        <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 1.5rem", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
             <span style={{ fontSize: "1.25rem" }}>⛏️</span>
             <span style={{ fontWeight: 700, color: "var(--text-primary)" }}>Khoemacau Connect</span>
