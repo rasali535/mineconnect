@@ -59,6 +59,36 @@ export default function LoginPage() {
             </div>
           )}
 
+          <div style={{ marginBottom: "1.5rem" }}>
+            <p style={{ fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-muted)", marginBottom: "0.5rem", fontWeight: 600 }}>Demo Accounts</p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+              <button 
+                type="button" 
+                className="badge badge-neutral" 
+                style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "admin@khoemacau.com" ? "var(--surface-3)" : "var(--surface-2)" }}
+                onClick={() => { setEmail("admin@khoemacau.com"); setPassword("Khoemacau2026!"); }}
+              >👑 Admin</button>
+              <button 
+                type="button" 
+                className="badge badge-neutral" 
+                style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "supplier@shafteng.co.za" ? "var(--surface-3)" : "var(--surface-2)" }}
+                onClick={() => { setEmail("supplier@shafteng.co.za"); setPassword("Khoemacau2026!"); }}
+              >🏭 Supplier</button>
+              <button 
+                type="button" 
+                className="badge badge-neutral" 
+                style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "applicant@email.com" ? "var(--surface-3)" : "var(--surface-2)" }}
+                onClick={() => { setEmail("applicant@email.com"); setPassword("Khoemacau2026!"); }}
+              >👷 Applicant</button>
+              <button 
+                type="button" 
+                className="badge badge-neutral" 
+                style={{ cursor: "pointer", border: "1px solid var(--border)", background: email === "community@rustenburg.gov.za" ? "var(--surface-3)" : "var(--surface-2)" }}
+                onClick={() => { setEmail("community@rustenburg.gov.za"); setPassword("Khoemacau2026!"); }}
+              >🤝 Community</button>
+            </div>
+          </div>
+
           <form onSubmit={handleLogin} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
             <div>
               <label className="label">Email address</label>
